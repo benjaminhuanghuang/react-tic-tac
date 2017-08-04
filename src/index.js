@@ -5,10 +5,17 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import Routes from './routes/index';
 
+import Template from './containers/Template'
+// import Home from './containers/Home'
+// import Profile from './containers/Profile'
+
 const history = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={history} routes={Routes}>
+  <Router history={history}>
+    <div>
+        <Route path='/' component={Template} />
+    </div>
   </Router>,
   document.getElementById('root')
 )

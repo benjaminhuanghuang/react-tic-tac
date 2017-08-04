@@ -7,7 +7,7 @@ import Template from '../containers/Template'
 
 const createRoutes = () => {
   return (
-    <Route path='/'component={Template} >
+    <Route path='/' component={Template} >
     </Route>
   )
 }
