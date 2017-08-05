@@ -2,13 +2,16 @@ import React, {Component} from 'react'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
-import Menu from 'material-ui/svg-icons/navigation/menu'
 import { Link } from 'react-router-dom'
+
+// App
+import { NavToggleButton } from '../styled/NavDrawer'
+
 
 export default class NavDrawer extends Component {
   state = {
-    open: false
+    open: true,
+    width:250
   }
 
   toggle = ()=> {
@@ -21,22 +24,20 @@ export default class NavDrawer extends Component {
   render() {
     return (
       <div>
-          <FloatingActionButton onTouchTap={this.toggle}>
-            <Menu></Menu>
-          </FloatingActionButton>
-          <Drawer open={this.state.open}>
+          <NavToggleButton toggle={this.toggle} width={this.state.width} open={this.state.open}/>
+          <Drawer open={this.state.open} width={this.state.width}>
             <div style={{height:'200px',width:'100%', backgroundColor:'salmon'}}>
               Login Container
             </div>
             <Divider></Divider>
             <Link to={'/'}>
-              <MenuItem primaryText={'Play'}/>
+              <MenuItem primaryText={'Play'} onTouchTap={this.toggle}/>
             </Link>
             <Link to={'/profile'}>
-              <MenuItem primaryText={'Profile'}/>
+              <MenuItem primaryText={'Profile'} onTouchTap={this.toggle}/>
             </Link>
           </Drawer>
-      </div>
+      </div> 
     );
   }
 }
