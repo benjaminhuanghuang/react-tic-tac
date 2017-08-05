@@ -10,13 +10,13 @@ import Profile from './containers/Profile';
 const history = createBrowserHistory();
 
 ReactDOM.render(
-  <Template>
-    <Router history={history}>
+  <Router history={history}>
+    <Template>
       <Switch>
         <Route exact path='/'  component={Home} />
         <Route path='/profile' component={Profile} />
       </Switch>
-    </Router>
-  </Template>,
+    </Template>
+  </Router>,
   document.getElementById('root')
 )

@@ -4,7 +4,7 @@ import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import Menu from 'material-ui/svg-icons/navigation/menu'
-
+import { Link } from 'react-router-dom'
 
 export default class NavDrawer extends Component {
   state = {
@@ -29,8 +29,12 @@ export default class NavDrawer extends Component {
               Login Container
             </div>
             <Divider></Divider>
-            <MenuItem primaryText={'Play'}/>
-            <MenuItem primaryText={'Profile'}/>
+            <Link to={'/'}>
+              <MenuItem primaryText={'Play'}/>
+            </Link>
+            <Link to={'/profile'}>
+              <MenuItem primaryText={'Profile'}/>
+            </Link>
           </Drawer>
       </div>
     );
