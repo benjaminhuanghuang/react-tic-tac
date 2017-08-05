@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import {media} from '../utils/media'
+
 
 export const Header = styled.header`
   text-align: center;
@@ -14,6 +16,9 @@ export const Container = styled.div`
   margin: auto;
   width: 80px;
   min-height: 80vh;
+  ${media.handheld`
+    width: 100%;
+  `}
 `
 
 export const Main = (props)=>{
