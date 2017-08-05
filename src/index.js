@@ -5,7 +5,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import Template from './containers/Template'
 import Home from './containers/Home'
-import Profile from './containers/Profile'
+import Profile from './containers/Profile';
 
 const history = createBrowserHistory();
 
